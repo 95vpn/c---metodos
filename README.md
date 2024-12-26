@@ -35,3 +35,9 @@ Las variable globales no están restringidas a ningún ámbito, se pueden utiliz
 Las variable declaradas dentro de un metodo solo son accesibles para ese método.
 
 ## Parámetros de tipo valor y referencia
+Cuando se pasa un argumento a un método, las variables de **tipo valor** tienen sus valores copiados en el método. Cada variable tiene su propia copia de valor, por lo que la variable original no se modifica.
+Con los **tipos de referencia** la dirección del valor pasa al método. La variable proporcionada al método hace referencia al valor en esa dirección, por lo que lasoperaciones en esa variable afectan el valor al que hace referencia la otra.
+
+### Métodos con parámetros opcionales
+Los argumentos con nombre permiten especificar el valor de un parámetro utilizando su nombre en lugar de su posición.
+Los parametros opcionales permiten omitir esos argumentos al llamar al método.
