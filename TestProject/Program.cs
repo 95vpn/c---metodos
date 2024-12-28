@@ -565,10 +565,12 @@ double VndToUsd(int vnd)
 Console.WriteLine(100 * 0.5);
 */
 
+//Devolver string
 
-string input = "snake";
+/*
+string input = "there are the snake at the zoo";
 Console.WriteLine(input);
-Console.WriteLine(ReverseWord(input));
+Console.WriteLine(ReverseSentence(input));
 
 
 string ReverseWord(string word)
@@ -577,18 +579,163 @@ string ReverseWord(string word)
     for (int i = word.Length - 1; i >= 0; i--)
     {
         result += word[i];
-        Console.WriteLine(result);
+        // Console.WriteLine(result);
     }
     return result;
 }
 
+string ReverseSentence(string input)
+{
+    string result = "";
+    string[] words = input.Split(" ");
 
+    foreach (string word in words)
+    {
+        result += ReverseWord(word) + " ";
+    }
 
+    return result.Trim();
+}
+*/
 
+//Devuelve booleanos
 
+/*
+string[] words = {"racercar", "talented", "deified", "tent", "tenet"};
 
+Console.WriteLine("Is it a palindromo?");
+foreach (string word in words)
+{
+    Console.WriteLine($"{word}: {IsPalindrome(word)}");
 
+}
 
+bool IsPalindrome(string word)
+{
+    int start = 0;
+    int end = word.Length - 1;
+
+    while (start < end)
+    {
+        if (word[start] != word[end])
+        {
+            return false;
+        }
+        start++;
+        end--;
+    }
+
+    return true;
+}
+*/
+//Devolver matrices desde metodos
+
+/*
+int target = 60;
+int[] coins = new int[] {5, 5, 50, 25, 25, 10, 5};
+int[] result = TwoCoins(coins, target);
+
+if (result.Length == 0)
+{
+    Console.WriteLine("No two coins make change");
+}
+else
+{
+    Console.WriteLine($"Change found at positions {result[0]} and {result[1]}");
+}
+
+int[] TwoCoins(int[] coins, int target)
+{
+    for (int curr = 0; curr < coins.Length; curr++)
+    {
+        for (int next = curr + 1; next < coins.Length; next++)
+        {
+            if (coins[curr] + coins[next] == target)
+            {
+                return new int[] { curr, next };
+            }
+        }
+    }
+    return new int[0];
+}
+*/
+
+/*
+
+int target = 80;
+int[] coins = new int[] {5, 5, 50, 25, 25, 10, 5};
+int[,] result = TwoCoins(coins, target);
+
+if (result.Length == 0)
+{
+    Console.WriteLine("No two coins make change");
+}
+else
+{
+    Console.WriteLine($"Change found at positions ");
+    for (int i = 0; i < result.GetLength(0); i++)
+    {
+        if (result[i,0] == -1)
+        {
+            break;
+        }
+        Console.WriteLine($"{result [i,0]},{result[i,1]}");
+    }
+}
+
+int[,] TwoCoins(int[] coins, int target)
+{
+    int[,] result = {{-1,-1}, {-1,-1},{-1,-1},{-1,-1},{-1,-1}};
+    int count = 0;
+    for (int curr = 0; curr < coins.Length; curr++)
+    {
+        for (int next = curr + 1; next < coins.Length; next++)
+        {
+            if (coins[curr] + coins[next] == target)
+            {
+                result[count, 0] = curr;
+                result[count, 1] = next;
+                count++;
+            }
+            if (count == result.GetLength(0))
+            {
+                return result;
+            }
+        }
+    }
+    if (count == 0)
+    {
+        return new int [0, 0];
+    }
+    return result;
+}
+*/
+
+Random random = new Random();
+
+Console.WriteLine("Would you like to play? (Y/N)");
+if (ShouldPlay()) 
+{
+    PlayGame();
+}
+
+void PlayGame() 
+{
+    var play = true;
+
+    while (play) 
+    {
+        var target;
+        var roll;
+
+        Console.WriteLine($"Roll a number greater than {target} to win!");
+        Console.WriteLine($"You rolled a {roll}");
+        Console.WriteLine(WinOrLose());
+        Console.WriteLine("\nPlay again? (Y/N)");
+
+        play = ShouldPlay();
+    }
+}
 
 
 
