@@ -710,7 +710,7 @@ int[,] TwoCoins(int[] coins, int target)
     return result;
 }
 */
-
+/*
 Random random = new Random();
 
 Console.WriteLine("Would you like to play? (Y/N)");
@@ -762,8 +762,62 @@ string WinOrLose(int roll, int target)
     return "You Lose";
 }
 
+*/
+
+using System;
+using System.Reflection;
+string[] pettingZoo =
+{
+    "alpacas", "capybaras", "chickens", "ducks", "emus", "geese",
+    "goats", "iguanas", "kangaroos", "lemurs", "llamas", "macanas",
+    "ostriches", "pigs", "ponies", "rabbits", "sheep", "tortoises", 
+};
+
+void RandomizeAnimals()
+{
+    
+    
+    Random random = new Random();
+
+    for (int i = 0; i < pettingZoo.Length; i++)
+    {
+        int r = random.Next(pettingZoo.Length);
+        string temp = pettingZoo[i]; 
+        pettingZoo[i] = pettingZoo[r];
+        pettingZoo[r] = temp;  
+        
+    }
+
+   
+   
+   
+   
+
+}
+
+ foreach (string animal in pettingZoo)
+ {
+     Console.WriteLine(animal);
+ }
+
+//AssingGroup();
+
+Console.WriteLine("School A");
+
+//PrintGroup(group);
 
 
+//string[,] group = AssignGroup();
+
+//Actualmente hat tres ecuelas visitantes
+//La escuela A tienes seis grupos de visitantes (el numero predeternminado)
+//L a escuela B tiene tres grupos de visita
+//La escuela C tiene dos grupos de visita
+
+//Para cada escuela visitada, realice las siguientes tareas
+//Aleatorizar los animales
+//Asigna los animales al número correcto de grupos 
+//Imprima el nombre de la escuela
 
 
 
